@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Курс по видеомонтажу — От нуля до профи</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#ff6b6b; --muted:#9aa4b2; --glass: rgba(255,255,255,0.04);
+      --radius:16px; --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background: linear-gradient(180deg,#071027 0%, #071225 60%); color:#e6eef6; -webkit-font-smoothing:antialiased;
+      line-height:1.45;
+      padding:32px 20px;
+      display:flex; justify-content:center;
+    }
+    .container{width:100%; max-width:var(--maxw);} 
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:28px}
+    .brand{display:flex; gap:14px; align-items:center}
+    .logo{width:56px; height:56px; background:linear-gradient(135deg,var(--accent),#ff9a6b); border-radius:12px; display:grid; place-items:center; font-weight:800}
+    .brand h1{font-size:18px; margin:0}
+    nav{display:flex; gap:12px}
+    nav a{color:var(--muted); text-decoration:none; font-weight:600; padding:8px 12px; border-radius:10px}
+    nav a.cta{background:var(--accent); color:#08101a}
+
+    .hero{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center; margin-bottom:36px}
+    .hero .eyebrow{display:inline-block; background:var(--glass); padding:6px 10px; border-radius:999px; color:var(--muted); font-weight:600; margin-bottom:12px}
+    .hero h2{font-size:32px; margin:0 0 12px}
+    .hero p{color:var(--muted); margin:0 0 18px}
+    .buttons{display:flex; gap:12px}
+    .btn{padding:12px 16px; border-radius:12px; font-weight:700; cursor:pointer; border:0}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#ff9a6b); color:#08101a}
+    .btn.ghost{background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted)}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:20px; border-radius:16px; box-shadow: 0 6px 30px rgba(2,6,23,0.6);}
+
+    /* Right panel */
+    .signup{padding:18px; border-radius:12px}
+    .price{font-size:28px; font-weight:800; margin:6px 0}
+    .small{color:var(--muted); font-size:13px}
+    .form-row{display:flex; gap:8px; margin-top:12px}
+    input,select,textarea{width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit}
+    .submit{margin-top:12px}
+
+    /* Programs and pricing */
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:28px}
+    .prog h3{margin:0 0 8px}
+    .prog p{color:var(--muted); margin:0}
+
+    /* Testimonials */
+    .testimonials{display:flex; gap:12px}
+    .testi{flex:1; padding:14px; border-radius:12px; background:rgba(255,255,255,0.02)}
+    .testi p{color:var(--muted); margin:8px 0 0; font-size:14px}
+
+    /* FAQ accordion */
+    details{background:rgba(255,255,255,0.02); padding:12px; border-radius:10px; margin-bottom:8px}
+    summary{cursor:pointer; font-weight:700}
+
+    footer{display:flex; justify-content:space-between; align-items:center; margin-top:26px; color:var(--muted); font-size:14px}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      nav{display:none}
+    }
+
+    /* small touches */
+    .pill{display:inline-block; padding:6px 8px; border-radius:999px; background:rgba(255,255,255,0.03); color:var(--muted); font-weight:700}
+    .price-badge{background:rgba(0,0,0,0.35); padding:6px 10px; border-radius:999px; display:inline-block}
+
+    /* simple animation */
+    .logo, .card{transition:transform .3s ease, box-shadow .3s ease}
+    .logo:hover{transform:translateY(-4px)}
+    .card:hover{transform:translateY(-6px)}
+
+    /* small list */
+    ul.simple{padding-left:18px; color:var(--muted)}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">VM</div>
+        <div>
+          <h1>Курс: Видеомонтаж</h1>
+          <div style="color:var(--muted); font-size:13px">От нуля до профи — онлайн</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#program">Программа</a>
+        <a href="#pricing">Цены</a>
+        <a href="#reviews">Отзывы</a>
+        <a class="cta" href="#contact">Записаться</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Онлайн — старт сейчас</span>
+        <h2>Научись монтировать видео — с нуля до профи за 2 месяца</h2>
+        <p>Практические уроки, реальные проекты, поддержка ментора и портфолио для фриланса. Подойдёт для тиктокеров, ютуберов и начинающих монтажёров.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#contact">Записаться сейчас</a>
+          <a class="btn ghost" href="#pricing">Посмотреть цены</a>
+        </div>
+
+        <div style="margin-top:18px" class="card">
+          <strong>Что внутри курса</strong>
+          <ul class="simple">
+            <li>Уроки по Premiere/DaVinci/After Effects</li>
+            <li>10+ практических проектов</li>
+            <li>Разборы работ и фидбек</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="card signup">
+        <div style="display:flex; justify-content:space-between; align-items:center">
+          <div>
+            <div class="small">Пакет старт</div>
+            <div class="price">20 000 ₸</div>
+            <div class="small">Оплата в тенге — разовым платежом</div>
+          </div>
+          <div style="text-align:right">
+            <div class="price-badge">Группа: до 10 чел</div>
+          </div>
+        </div>
+
+        <form id="leadForm">
+          <div style="margin-top:12px">
+            <input id="name" placeholder="Имя" required />
+          </div>
+          <div class="form-row">
+            <input id="phone" placeholder="Телефон или Telegram" required />
+          </div>
+          <div style="margin-top:8px">
+            <select id="courseSelect">
+              <option value="Базовый">Базовый — 20 000 ₸</option>
+              <option value="Средний">Средний — 40 000 ₸</option>
+              <option value="Продвинутый">Продвинутый — 90 000 ₸</option>
+              <option value="Профи">Профи — 140 000 ₸</option>
+            </select>
+          </div>
+          <div class="submit">
+            <button type="submit" class="btn primary" style="width:100%;">Оставить заявку</button>
+          </div>
+          <div style="margin-top:10px; font-size:13px; color:var(--muted)">Или напиши в Telegram: <strong>@your_telegram</strong></div>
+        </form>
+
+        <div id="thanks" style="display:none; margin-top:12px; color:#aee7c0">Спасибо! Мы свяжемся в ближайшее время.</div>
+      </aside>
+    </section>
+
+    <section id="program" class="card" style="margin-bottom:18px;">
+      <h2 style="margin-top:0">Программа курса</h2>
+      <div class="grid-3">
+        <div class="prog card">
+          <h3>Базовый</h3>
+          <p>Знакомство с Premiere/CapCut, нарезка, простые титры, экспорт. 6–8 уроков.</p>
+        </div>
+        <div class="prog card">
+          <h3>Средний</h3>
+          <p>Цветокоррекция, ритм монтажа, работа со звуком, анимация текста. 8–10 уроков.</p>
+        </div>
+        <div class="prog card">
+          <h3>Продвинутый</h3>
+          <p>After Effects, VFX, съёмка и сценарий, работа с клиентом. 12–15 уроков.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" style="margin-bottom:18px">
+      <h2>Цены и пакеты</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Базовый</h3>
+          <div style="font-weight:800; font-size:20px; margin-bottom:8px">20 000 ₸</div>
+          <ul class="simple"><li>6–8 уроков</li><li>Домашние задания</li><li>Группа</li></ul>
+          <div style="margin-top:10px"><a class="btn primary" href="#contact">Купить</a></div>
+        </div>
+        <div class="card">
+          <h3>Средний</h3>
+          <div style="font-weight:800; font-size:20px; margin-bottom:8px">40 000 ₸</div>
+          <ul class="simple"><li>8–10 уроков</li><li>Цветокоррекция</li><li>Подготовка портфолио</li></ul>
+          <div style="margin-top:10px"><a class="btn primary" href="#contact">Купить</a></div>
+        </div>
+        <div class="card">
+          <h3>Профи</h3>
+          <div style="font-weight:800; font-size:20px; margin-bottom:8px">140 000 ₸</div>
+          <ul class="simple"><li>Все уровни</li><li>Менторство</li><li>Реальные проекты</li></ul>
+          <div style="margin-top:10px"><a class="btn primary" href="#contact">Купить</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="card" style="margin-bottom:18px">
+      <h2>Отзывы</h2>
+      <div class="testimonials">
+        <div class="testi">
+          <strong>Азамат, 19</strong>
+          <p>Быстро понял Premiere, теперь сам монтирую клипы для тиктока — первые заказы через 2 недели.</p>
+        </div>
+        <div class="testi">
+          <strong>Лёля</strong>
+          <p>Класс! Много практики и разбор работ — это реально работает.</p>
+        </div>
+        <div class="testi">
+          <strong>Миржан</strong>
+          <p>Понравился разбор ошибок и персональные советы. Портфолио оформил за месяц.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-bottom:18px">
+      <h2>FAQ</h2>
+      <details><summary>Какие программы нужны?</summary><p>Рекомендуем Premiere Pro или DaVinci Resolve. Для мобильного — CapCut. Все уроки сопровождаются файлами проекта.</p></details>
+      <details><summary>Будет ли сертификат?</summary><p>Да — сертификат по окончании и готовое портфолио.</p></details>
+      <details><summary>Сколько времени требуется?</summary><p>При интенсиве — ~2 месяца; при частичной занятости — до 3 месяцев.</p></details>
+    </section>
+
+    <section id="contact" class="card" style="margin-bottom:18px;">
+      <h2 id="contact">Контакты и запись</h2>
+      <p class="small">Оставь заявку — мы свяжемся в Telegram/WhatsApp и подтвердим дату старта.</p>
+      <div style="display:grid; grid-template-columns:1fr 320px; gap:16px; margin-top:12px">
+        <div class="card">
+          <h3>Форма записи</h3>
+          <form id="fullForm">
+            <div style="margin-bottom:8px"><input id="fullName" placeholder="ФИО" required></div>
+            <div style="margin-bottom:8px"><input id="contactPhone" placeholder="Телефон или Telegram" required></div>
+            <div style="margin-bottom:8px"><textarea id="note" placeholder="Кратко: почему хочешь учиться" rows="4"></textarea></div>
+            <div><button class="btn primary" type="submit">Отправить заявку</button></div>
+          </form>
+          <div id="fullThanks" style="display:none; margin-top:10px; color:#aee7c0">Заявка отправлена — скоро свяжемся.</div>
+        </div>
+        <div class="card">
+          <h3>Контакты</h3>
+          <p class="small">Telegram: <strong>https://@menzive</strong></p>
+          <p class="small">WhatsApp: <strong>+7 (778)701-57-20</strong></p>
+          <p class="small">Email: <strong> editski11@gmail.com</strong></p>
+          <div style="margin-top:12px"><a class="btn ghost" href="mailto:you@example.com">Написать на Email</a></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Курс по видеомонтажу</div>
+      <div>Сделано с ♥ — <span class="pill">VM Studio</span></div>
+    </footer>
+
+  </div>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // lead form
+    document.getElementById('leadForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      // basic validation
+      var name = document.getElementById('name').value.trim();
+      var phone = document.getElementById('phone').value.trim();
+      if(!name || !phone){ alert('Заполните имя и телефон'); return; }
+
+      // show thanks message (replace with actual backend integration)
+      document.getElementById('leadForm').style.display = 'none';
+      document.getElementById('thanks').style.display = 'block';
+
+      // optionally prepare mailto for owner
+      var course = document.getElementById('courseSelect').value;
+      var subject = encodeURIComponent('Новая заявка: ' + course);
+      var body = encodeURIComponent('Имя: '+name + '\nКонтакт: ' + phone + '\nКурс: ' + course);
+      // open mail client for admin (uncomment if you want auto-open)
+      // window.location = 'mailto:you@example.com?subject='+subject+'&body='+body;
+    });
+
+    // full form
+    document.getElementById('fullForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      var fullName = document.getElementById('fullName').value.trim();
+      var contactPhone = document.getElementById('contactPhone').value.trim();
+      if(!fullName || !contactPhone){ alert('Заполните ФИО и контакт'); return; }
+      document.getElementById('fullForm').style.display = 'none';
+      document.getElementById('fullThanks').style.display = 'block';
+      // You can add code here to POST to your server or use Formspree / Google Forms / Telegram API
+    });
+
+  </script>
+</body>
+</html>
